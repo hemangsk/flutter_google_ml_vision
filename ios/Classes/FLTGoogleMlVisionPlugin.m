@@ -122,8 +122,7 @@ static NSMutableDictionary<NSNumber *, id<Detector>> *detectors;
   NSNumber *width = metadata[@"width"];
   NSNumber *height = metadata[@"height"];
 
-  NSNumber *rawFormat = metadata[@"rawFormat"];
-  FourCharCode format = FOUR_CHAR_CODE(rawFormat.unsignedIntValue);
+  FourCharCode format = kCVPixelFormatType_32BGRA;
 
   CVPixelBufferRef pxBuffer = NULL;
   if (planeCount == 0) {
